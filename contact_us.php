@@ -1,3 +1,43 @@
+<?php
+if (isset($_POST["submit"])) {
+  $username = $_POST["name"];
+  $email = $_POST["email"];
+  $phone = $_POST["phone"];
+  $message = $_POST["message"];
+
+  if (empty($username) || empty($email) || empty($phone) || empty($message)) {
+    header("Location: contact_us.php?error");
+  }
+  else {
+    $to = "vj.janushankan1006@gmail.com";
+
+    if(mail($to, $phone, $message, $mail)){
+      header("Location: contact_us.php?success");
+    }
+  }
+
+  // $to = $email;
+  // $subject = $message;
+
+  // $message = "phone: {$phone}" . $message;
+
+  // // Always set content-type when sending HTML email
+  // $headers = "MIME-Version: 1.0" . "\r\n";
+  // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+  // // More headers
+  // $headers .= 'From: vj.janushankan1006@gmail.com';
+
+  // $mail = mail($to, $subject, $message, $headers);
+
+  // if ($mail) {
+  //   echo "<script>alert('Mail Send');</script>";
+  // } else {
+  //   echo "<script>alert('Mail Not Send');</script>";
+  // }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +51,9 @@
   <!--head-->
   <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--body-->
   <link rel="stylesheet" href="css/contact_us.css" />
@@ -40,10 +77,8 @@
   <!--Navbar-->
   <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
     <div class="container-fluid">
-      <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
-          style="height: 65px; width: 150px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -56,17 +91,13 @@
           </li>
           <!-- <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="#">Categories</a>
                 </li> -->
-          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-              href="services.php">Services</a>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
           </li>
-          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-              href="portfolio.php">Portfolio</a></li>
-          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-              href="packages.php">Packages</a>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
           </li>
 
-          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis active"
-              href="contact_us.php">Contact
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis active" href="contact_us.php">Contact
               Us</a>
           </li>
 
@@ -85,7 +116,6 @@
 
 
 
-  <!--body-->
   <main>
     <div class="c-container">
       <span class="big-circle"></span>
@@ -93,7 +123,7 @@
       <div class="form">
         <div class="contact-info">
           <h3 class="title">Let's get in touch</h3>
-          <p class="text">
+          <p class="text con-text">
             "Where every occasion becomes an unforgettable experience,
             let us weave the threads of your dreams into a tapestry of extraordinary events."
           </p>
@@ -153,8 +183,19 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form action="index.php" autocomplete="off">
+          <form action="contact_us.php" method="POST" autocomplete="off">
             <h3 class="title">Contact us</h3>
+            <?php
+            $msg = "";
+            if (isset($_GET['error'])) {
+              $msg = "Please fill in the blanks";
+              echo '<div class="alert alert-danger">' . $msg . '</div>';
+            }
+            if (isset($_GET['success'])) {
+              $msg = "You message has been sent successfully";
+              echo '<div class="alert alert-success">' . $msg . '</div>';
+            }
+            ?>
             <div class="input-container">
               <input type="text" name="name" class="input" />
               <label for="">Username</label>
@@ -175,7 +216,7 @@
               <label for="">Message</label>
               <span>Message</span>
             </div>
-            <input type="submit" value="Send" class="c-btn" />
+            <input type="submit" name="submit" value="Send" class="c-btn" />
           </form>
         </div>
       </div>
@@ -189,8 +230,7 @@
 
         <div class="col-lg-3 col-sm-6">
           <div class="single-box">
-            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo"
-                style="height: 90px; width: 220px;"></a>
+            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo" style="height: 90px; width: 220px;"></a>
 
             <h3 class="pt-4 foot">About Us</h3>
             <p class="foot">We are your trusted event planning partner, offering comprehensive services and
@@ -294,9 +334,7 @@
 
   <!--head and footer-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <script src="/contact_us.js"></script>
 
   <!--body-->

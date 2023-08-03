@@ -206,8 +206,17 @@ textarea.input {
   text-transform: none !important;
 }
 
-.contact-info .text {
+.title {
+  color: #df4adf;
+}
+
+.contact-info{
   color: #333;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.text {
+  color: #df4adf !important;
   margin: 1.5rem 0 2rem 0;
 }
 
