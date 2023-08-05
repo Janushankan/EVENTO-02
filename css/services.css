@@ -543,3 +543,14 @@ h2 {
 .active {
 	color: #f1039e !important;
 }
+
+.modal-content {
+	max-height: 300px !important;
+	/* Adjust the max height as needed */
+	overflow-y: auto !important;
+}
+
+.mem-con {
+	font-family: poppins, serif;
+	font-size: 14px;
+}
