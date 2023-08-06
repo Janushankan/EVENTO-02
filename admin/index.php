@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,31 +47,34 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown active" aria-haspopup="true" aria-expanded="false">
-                                    Administrator </a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#!">Manage Account</a>
-                                    <a class="dropdown-item" href="#!">Logout</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                </div>
-                            </li>
+                            <!-- <li class="nav-item dropdown"> -->
+                                <!-- <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown active" aria-haspopup="true" aria-expanded="false"> -->
+                                    <!-- Administrator </a> -->
+                                <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> -->
+                                    <!-- <a class="dropdown-item" href="#!">Manage Account</a> -->
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                <!-- </div> -->
+                            <!-- </li> -->
                         </ul>
                     </div>
                 </div>
             </nav>
             <!-- Page content-->
             <div class="container">
-                <h1 class="mt-4">Simple Sidebar</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <h1>Welcome, <?php echo $_SESSION["username"]; ?>!</h1>
+                <h1 class="mt-4">Welcome to EVENTO Admin Panel...!</h1>
+                <p>Welcome to the EVENTO Admin Panel! Manage and organize events with ease
+                    using our intuitive tools and features. Streamline event planning,
+                    coordination, and execution all in one place.</p>
                 <p>
-                    Make sure to keep all page content within the
-                    <code>#page-content-wrapper</code>
-                    . The top navbar is optional, and just for demonstration. Just create an element with the
-                    <code>#sidebarToggle</code>
-                    ID which will toggle the menu when clicked.
+                    Step into the world of seamless event management with the
+                    EVENTO Admin Panel! Your go-to hub for effortlessly planning,
+                    coordinating, and executing exceptional events. From crafting
+                    event schedules to handling guest lists and logistics, our
+                    powerful tools empower you to curate unforgettable experiences.
+                    Navigate through a user-friendly interface designed to make your
+                    event-planning journey smooth and efficient. Let's create
+                    extraordinary moments together!
                 </p>
             </div>
         </div>
