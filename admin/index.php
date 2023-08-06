@@ -21,12 +21,11 @@
         <div class="border-end bg-white" id="sidebar-wrapper" style="position: static; font-family: Arial, sans-serif;">
             <div class="sidebar-heading border-bottom bg-light">EVENTO ADMIN PANEL</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="index.html">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="team.html">Team</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="index.php">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="organizers.php">Event Organizers Team</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="decorators.php">Decorators Team</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="photographers.php">Photographers Team</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="caterers.php">Caterers Team</a>
             </div>
         </div>
         <!-- Page content wrapper-->
@@ -35,15 +34,11 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
                     <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                    data-bs-toggle="dropdown active" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown active" aria-haspopup="true" aria-expanded="false">
                                     Administrator </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#!">Manage Account</a>

@@ -104,7 +104,7 @@
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModal1Label">Industry Experience</h1>
+                                                <h1 class="modal-title fs-5 active" id="exampleModal1Label">Industry Experience</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -161,9 +161,7 @@
                                     detail. We understand that every
                                     element of an event, from venue selection to decor, audiovisual setup, and guest
                                     experience,
-                                    contributes to its success. Our team ensure that even the smallest details are taken
-                                    care of to
-                                    create a seamless and immersive event experience.</p>
+                                    contributes to its success.</p>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn ser-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     Explore
@@ -173,7 +171,7 @@
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModal2Label">Attention to Detail</h1>
+                                                <h1 class="modal-title fs-5 active" id="exampleModal2Label">Attention to Detail</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -244,7 +242,7 @@
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModal3Label">Creativity</h1>
+                                                <h1 class="modal-title fs-5 active" id="exampleModal3Label">Creativity</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -310,7 +308,7 @@
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModal4Label">Vendor</h1>
+                                                <h1 class="modal-title fs-5 active" id="exampleModal4Label">Vendor</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -389,7 +387,7 @@
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModal5Label" aria-hidden="true">
+                                <!-- <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModal5Label" aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
@@ -524,7 +522,91 @@
 
                                         </div>
                                     </div>
+                                </div> -->
+
+                                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModal5Label" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
+                                        <div class="modal-content rounded-4">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal5Label">Event Organizers</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?php
+                                                $servername = "localhost"; // Change this to your database server
+                                                $username = "root"; // Change this to your database username
+                                                $password = ""; // Change this to your database password
+                                                $dbname = "event_planner"; // Change this to your database name
+
+                                                // Create a connection
+                                                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                                // Check the connection
+                                                if ($conn->connect_error) {
+                                                    die("Connection failed: " . $conn->connect_error);
+                                                }
+
+                                                // Fetch data from the database
+                                                $sql = "SELECT * FROM organizer";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo '
+                        <div class="container my-2">
+                            <div class="row p-3">
+                                <div class="col-md-4 pb-3">
+                                    <img src="images/team001.png" class="rounded float-start" alt="...">
                                 </div>
+                                <div class="col-md-8 align-items-center">
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Id : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['org_id'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Name : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['org_name'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Email : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['org_email'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Phone No : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['org_phone_no'] . '</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                                                    }
+                                                } else {
+                                                    echo '<p>No organizers found</p>';
+                                                }
+
+                                                // Close the connection
+                                                $conn->close();
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -544,7 +626,7 @@
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModal6Label" aria-hidden="true">
+                                <!-- <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModal6Label" aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
@@ -679,6 +761,89 @@
 
                                         </div>
                                     </div>
+                                </div> -->
+
+                                <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModal6Label" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
+                                        <div class="modal-content rounded-4">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal6Label">Decorators</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?php
+                                                $servername = "localhost"; // Change this to your database server
+                                                $username = "root"; // Change this to your database username
+                                                $password = ""; // Change this to your database password
+                                                $dbname = "event_planner"; // Change this to your database name
+
+                                                // Create a connection
+                                                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                                // Check the connection
+                                                if ($conn->connect_error) {
+                                                    die("Connection failed: " . $conn->connect_error);
+                                                }
+
+                                                // Fetch data from the database
+                                                $sql = "SELECT * FROM decorator";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo '
+                        <div class="container my-2">
+                            <div class="row p-3">
+                                <div class="col-md-4 pb-3">
+                                    <img src="images/team002.png" class="rounded float-start" alt="...">
+                                </div>
+                                <div class="col-md-8 align-items-center">
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Id : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['decorator_id'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Name : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['decorator_name'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Email : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['decorator_email'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Phone No : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['decorator_phone_no'] . '</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                                                    }
+                                                } else {
+                                                    echo '<p>No Decorators found</p>';
+                                                }
+
+                                                // Close the connection
+                                                $conn->close();
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -703,7 +868,7 @@
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModal7Label" aria-hidden="true">
+                                <!-- <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModal7Label" aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
@@ -838,6 +1003,89 @@
 
                                         </div>
                                     </div>
+                                </div> -->
+
+                                <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModal7Label" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
+                                        <div class="modal-content rounded-4">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal7Label">Photographers</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?php
+                                                $servername = "localhost"; // Change this to your database server
+                                                $username = "root"; // Change this to your database username
+                                                $password = ""; // Change this to your database password
+                                                $dbname = "event_planner"; // Change this to your database name
+
+                                                // Create a connection
+                                                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                                // Check the connection
+                                                if ($conn->connect_error) {
+                                                    die("Connection failed: " . $conn->connect_error);
+                                                }
+
+                                                // Fetch data from the database
+                                                $sql = "SELECT * FROM photographer";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo '
+                        <div class="container my-2">
+                            <div class="row p-3">
+                                <div class="col-md-4 pb-3">
+                                    <img src="images/team003.png" class="rounded float-start" alt="...">
+                                </div>
+                                <div class="col-md-8 align-items-center">
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Id : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['photographer_id'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Name : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['photographer_name'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Email : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['photographer_email'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Phone No : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['photographer_phone_no'] . '</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                                                    }
+                                                } else {
+                                                    echo '<p>No Photographers found</p>';
+                                                }
+
+                                                // Close the connection
+                                                $conn->close();
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -845,7 +1093,7 @@
                         <div class="card mt-5" style="width: 18.5rem;">
                             <div class="our-services-col2">
                                 <img src="images/cat.jpeg">
-                                <h3 class="card-title active">Food Services</h3>
+                                <h3 class="card-title active">Caterers</h3>
                                 <p class="card-text">Caterers and food service professionals excels in creating culinary
                                     experiences that delight
                                     attendees. They carefully consider dietary preferences and
@@ -859,7 +1107,7 @@
                                 </button>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModal8Label" aria-hidden="true">
+                                <!-- <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModal8Label" aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
                                         <div class="modal-content rounded-4">
                                             <div class="modal-header">
@@ -992,6 +1240,89 @@
                                                 </div>
                                             </div>
 
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModal8Label" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable p-5">
+                                        <div class="modal-content rounded-4">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal8Label">Caterers</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?php
+                                                $servername = "localhost"; // Change this to your database server
+                                                $username = "root"; // Change this to your database username
+                                                $password = ""; // Change this to your database password
+                                                $dbname = "event_planner"; // Change this to your database name
+
+                                                // Create a connection
+                                                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                                // Check the connection
+                                                if ($conn->connect_error) {
+                                                    die("Connection failed: " . $conn->connect_error);
+                                                }
+
+                                                // Fetch data from the database
+                                                $sql = "SELECT * FROM caterer";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo '
+                        <div class="container my-2">
+                            <div class="row p-3">
+                                <div class="col-md-4 pb-3">
+                                    <img src="images/team004.png" class="rounded float-start" alt="...">
+                                </div>
+                                <div class="col-md-8 align-items-center">
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Id : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['caterer_id'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Name : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['caterer_name'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Email : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['caterer_email'] . '</label>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <div class="col-md-3 text-start">
+                                            <label class="form-label">Phone No : </label>
+                                        </div>
+                                        <div class="col-md-5 text-start text-secondary">
+                                            <label class="form-label">' . $row['caterer_phone_no'] . '</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                                                    }
+                                                } else {
+                                                    echo '<p>No Caterers found</p>';
+                                                }
+
+                                                // Close the connection
+                                                $conn->close();
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
