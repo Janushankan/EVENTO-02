@@ -21,13 +21,13 @@ $result = mysqli_query($db, $query);
 if ($result) {
   echo "<script>
             alert('Data Added Successfully!');
-            window.location = 'index.php'; // Redirect to the desired page after successful insertion
+            window.location = 'organizers.php'; // Redirect to the desired page after successful insertion
           </script>";
 } else {
   // If insertion failed
   echo "<script>
             alert('Failed to add data.');
-            window.location = 'index.php'; // Redirect to the desired page after an error
+            window.location = 'organizers.php'; // Redirect to the desired page after an error
           </script>";
 }
 

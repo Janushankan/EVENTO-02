@@ -56,7 +56,7 @@
                 <h1 class="text-center">Team Members</h1>
                 <br>
                 <hr>
-                <h4 class="text-center">Event Organizers</h4>
+                <h4 class="text-center">Event Caterers</h4>
 
                 <form action="insertCaterers.php" method="post">
                     <table class="table table-bordered mt-4">
