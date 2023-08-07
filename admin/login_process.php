@@ -1,5 +1,3 @@
-
-
 <?php
 // Start session
 session_start();
@@ -21,15 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Hash the provided password (use a secure hashing algorithm like bcrypt)
-    $hashedPassword = hash("sha256", $password);
-
-    // Use a prepared statement to prevent SQL injection
-    $stmt = $conn->prepare("SELECT id FROM users WHERE username=? AND password=?");
-    $stmt->bind_param("ss", $username, $hashedPassword);
-    $stmt->execute();
-
-    $result = $stmt->get_result();
+    $sql = "SELECT id FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
         // Login successful
@@ -40,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["login_error"] = "Invalid username or password";
         header("Location: login.php");
     }
-
-    $stmt->close();
 }
 
 $conn->close();
