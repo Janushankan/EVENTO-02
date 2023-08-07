@@ -14,20 +14,20 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form action="includes/login.inc.php" method="POST" class="sign-in-form">
           <div class="logo-img">
             <a href="index.php"><img src="images/logo.png" alt="logo" height="70"></a>
           </div>
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" name="uid" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" name="pwd" placeholder="Password" />
           </div>
-          <input type="submit" value="Login" class="btn solid" />
+          <input type="submit" name="submit" value="Login" class="btn solid" />
           <!-- <p class="social-text">Or Sign in with social platforms</p> -->
           <!-- <div class="social-media">
             <a href="#" class="social-icon">
@@ -50,24 +50,28 @@
             </a>
           </div> -->
         </form>
-        <form action="#" class="sign-up-form">
+        <form action="includes/signup.inc.php" method="POST" class="sign-up-form">
           <div class="logo-img">
             <a href="index.php"><img src="images/logo.png" alt="logo" height="70"></a>
           </div>
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input type="text" name="uid" placeholder="Username" />
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" name="email" placeholder="Email" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" />
+            <input type="password" name="pwd" placeholder="Password" />
           </div>
-          <input type="submit" class="btn" value="Sign up" />
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="pwdrepeat" placeholder="Confirm Password" />
+          </div>
+          <input type="submit" name="submit" class="btn" value="Sign up" />
           <!-- <p class="social-text">Or Sign up with social platforms</p> -->
           <!-- <div class="social-media">
             <a href="#" class="social-icon">

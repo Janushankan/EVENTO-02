@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,17 +12,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- animation effects -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -41,7 +41,7 @@
 <body>
 
     <!--Navbar-->
-    <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
+    <!-- <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
             <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
                     style="height: 65px; width: 150px;"></a>
@@ -59,15 +59,13 @@
                     <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis active"
                             href="about_us.php">About Us</a>
                     </li>
-                    <!-- <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="#">Categories</a>
-                </li> -->
                     <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
                             href="services.php">Services</a>
                     </li>
                     <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
                             href="portfolio.php">Portfolio</a></li>
                     <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-                            href="pakages.php">Packages</a>
+                            href="packages.php">Packages</a>
                     </li>
 
                     <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
@@ -86,9 +84,56 @@
                 </form>
             </div>
         </nav>
+    </nav> -->
+
+    <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
+        <div class="container-fluid">
+            <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav gap-40">
+                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page" href="index.php">Home </a>
+                    </li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link active text-body-emphasis" href="about_us.php">About Us</a>
+                    </li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
+                    </li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
+                    </li>
+
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="contact_us.php">Contact
+                            Us</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="navbar">
+                <div class="container-fluid">
+                    <?php
+                    if (isset($_SESSION["userid"])) {
+                    ?>
+                        <ul class="navbar-nav gap-40">
+                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Logout</a></li>
+                        </ul>
+
+                    <?php
+                    } else {
+                    ?>
+                        <ul class="navbar-nav gap-40">
+                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Login</a></li>
+                        </ul>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
     </nav>
-
-
 
 
 
@@ -256,8 +301,7 @@
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo"
-                                style="height: 90px; width: 220px;"></a>
+                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo" style="height: 90px; width: 220px;"></a>
 
                         <h3 class="pt-4 foot">About Us</h3>
                         <p class="foot">We are your trusted event planning partner, offering comprehensive services and
