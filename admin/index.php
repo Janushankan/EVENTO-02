@@ -54,7 +54,7 @@ if (!isset($_SESSION["username"])) {
             </nav>
             <!-- Page content-->
             <div class="container">
-                <h1>Welcome, <?php echo $_SESSION["username"]; ?>!</h1>
+                <h1>Hiii, <?php echo $_SESSION["username"]; ?>!</h1>
                 <h1 class="mt-4">Welcome to EVENTO Admin Panel...!</h1>
                 <p>Welcome to the EVENTO Admin Panel! Manage and organize events with ease
                     using our intuitive tools and features. Streamline event planning,

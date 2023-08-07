@@ -7,12 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- animation effects -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -27,35 +24,26 @@
     <!--Navbar-->
     <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
-            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
-                    style="height: 65px; width: 150px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav gap-40">
-                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page"
-                            href="index.php">Home </a>
+                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page" href="index.php">Home </a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-                            href="about_us.php">About Us</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About Us</a>
                     </li>
                     <!-- <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="#">Categories</a>
                 </li> -->
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-                            href="services.php">Services</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-                            href="portfolio.php">Portfolio</a></li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis active"
-                            href="packages.php">Packages</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis active" href="packages.php">Packages</a>
                     </li>
 
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
-                            href="contact_us.php">Contact
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="contact_us.php">Contact
                             Us</a>
                     </li>
 
@@ -65,8 +53,7 @@
         <nav class="navbar">
             <div class="container-fluid">
                 <form class="d-flex">
-                    <a href="sign_in.php" class="btn search-btn" style="background-color: #e97dc3;"
-                        type="submit">Login</a>
+                    <a href="sign_in.php" class="btn search-btn" style="background-color: #e97dc3;" type="submit">Login</a>
                 </form>
             </div>
         </nav>
@@ -100,7 +87,58 @@
                                     <i class="fas fa-star-full-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 25000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal1Label">Catering - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +158,58 @@
                                     <i class="fas fa-star-full-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 15000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal2Label">Photography - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +229,58 @@
                                     <i class="fas fa-star-half-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 12000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModal3Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal3Label">DJ - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -162,7 +302,58 @@
                                     <i class="fas fa-star-full-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 30000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModal4Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal4Label">Decoration - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -174,7 +365,7 @@
 
                             <div class="card-body">
                                 <h3 class="card-title">Decoration + Photography</h3>
-                                <p class="card-text">Unforgetable memory</p>
+                                <p class="card-text">Unforgettable memory</p>
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -183,7 +374,58 @@
                                     <i class="fas fa-star-half-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 40000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModal5Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal5Label">Decoration + Photography - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,7 +445,58 @@
                                     <i class="fas fa-star-half-alt"></i>
                                 </div><br>
                                 <p>Price for one package is <span class="price">Rs. 60000/=</span>.</p>
-                                <button type=" button" class="btn search-btn book-btn">Book</button>
+                                <!-- <button type=" button" class="btn search-btn book-btn">Book</button> -->
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn search-btn book-btn" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                                    Book
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModal6Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5 active" id="exampleModal6Label">Photography + DJ - Book</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="container">
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group p-2">
+                                                            <label for="name form-name pb-2">Name</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="phone_no">Phone No</label>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Enter your phone no">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="type">Event Type</label>
+                                                            <input type="text" class="form-control" id="type" placeholder="Enter your event type">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="location">Event Location</label>
+                                                            <input type="text" class="form-control" id="location" placeholder="Enter your event location">
+                                                        </div>
+                                                        <div class="form-group p-2">
+                                                            <label for="date">Event Date</label>
+                                                            <input type="date" class="form-control datepicker" id="date" placeholder="MM/DD/YYY">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn search-btn book-btn">Book</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,8 +515,7 @@
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo"
-                                style="height: 90px; width: 220px;"></a>
+                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo" style="height: 90px; width: 220px;"></a>
 
                         <h3 class="pt-4 foot">About Us</h3>
                         <p class="foot">We are your trusted event planning partner, offering comprehensive services and
@@ -328,9 +620,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

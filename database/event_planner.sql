@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2023 at 03:35 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Aug 06, 2023 at 07:07 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `event planner`
+-- Database: `event_planner`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `admin` (
   `admin_email` varchar(100) NOT NULL,
   `admin_phone_no` int(10) NOT NULL,
   `client_id` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,8 +45,16 @@ CREATE TABLE `caterer` (
   `caterer_id` varchar(100) NOT NULL,
   `caterer_name` varchar(100) NOT NULL,
   `caterer_email` varchar(100) NOT NULL,
-  `caterer_phone_no` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `caterer_phone_no` int(10) NOT NULL,
+  `image` mediumblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `caterer`
+--
+
+INSERT INTO `caterer` (`caterer_id`, `caterer_name`, `caterer_email`, `caterer_phone_no`, `image`) VALUES
+('C001', 'Mahi', 'mahi@gmail.com', 789632563, 0x7465616d3030342e706e67);
 
 -- --------------------------------------------------------
 
@@ -56,12 +64,10 @@ CREATE TABLE `caterer` (
 
 CREATE TABLE `client` (
   `client_id` varchar(100) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
+  `client_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `address` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -74,8 +80,16 @@ CREATE TABLE `decorator` (
   `decorator_name` varchar(100) NOT NULL,
   `decorator_email` varchar(100) NOT NULL,
   `decorator_phone_no` int(10) NOT NULL,
-  `description` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `description` varchar(1000) NOT NULL,
+  `image` mediumblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `decorator`
+--
+
+INSERT INTO `decorator` (`decorator_id`, `decorator_name`, `decorator_email`, `decorator_phone_no`, `description`, `image`) VALUES
+('D001', 'Kavindu', 'kavindu@gmail.com', 789654123, '', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +102,7 @@ CREATE TABLE `event` (
   `event_type` varchar(100) NOT NULL,
   `event_date` varchar(100) NOT NULL,
   `org_id` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -100,7 +114,7 @@ CREATE TABLE `event_category` (
   `event_cat_Id` int(100) NOT NULL,
   `event_id` varchar(100) NOT NULL,
   `event_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -113,8 +127,18 @@ CREATE TABLE `organizer` (
   `client_id` varchar(100) NOT NULL,
   `org_name` varchar(100) NOT NULL,
   `org_email` varchar(100) NOT NULL,
-  `org_phone_no` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `org_phone_no` int(10) NOT NULL,
+  `image` mediumblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `organizer`
+--
+
+INSERT INTO `organizer` (`org_id`, `client_id`, `org_name`, `org_email`, `org_phone_no`, `image`) VALUES
+('E001', '', 'Janushankan', 'janushankan1006@gmail.com', 711439088, 0x7465616d3030312e706e67),
+('E002', '', 'Powshihan', 'powshihan@gmail.com', 766123478, 0x7465616d3030362e706e67),
+('E003', '', 'Kajanan', 'kajanan@gmailcom', 771111111, 0x7465616d3030372e706e67);
 
 -- --------------------------------------------------------
 
@@ -127,8 +151,16 @@ CREATE TABLE `photographer` (
   `photographer_name` varchar(100) NOT NULL,
   `photographer_email` varchar(100) NOT NULL,
   `photographer_phone_no` int(10) NOT NULL,
-  `event_id` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `event_id` varchar(100) NOT NULL,
+  `image` mediumblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `photographer`
+--
+
+INSERT INTO `photographer` (`photographer_id`, `photographer_name`, `photographer_email`, `photographer_phone_no`, `event_id`, `image`) VALUES
+('P001', 'Kumara', 'kumara@gmail.com', 773692581, '', 0x7465616d3030392e706e67);
 
 -- --------------------------------------------------------
 
@@ -141,7 +173,7 @@ CREATE TABLE `service_charge` (
   `org_id` varchar(100) NOT NULL,
   `payment_type` varchar(100) NOT NULL,
   `amount` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -154,8 +186,9 @@ CREATE TABLE `technician` (
   `technician_name` varchar(100) NOT NULL,
   `technician_email` varchar(100) NOT NULL,
   `technician_phone_no` int(10) NOT NULL,
-  `event_id` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `event_id` varchar(100) NOT NULL,
+  `image` mediumblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -168,7 +201,7 @@ CREATE TABLE `venue` (
   `venue_name` int(100) NOT NULL,
   `venue_address` int(100) NOT NULL,
   `availabiliy` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -280,28 +313,10 @@ ALTER TABLE `event_category`
   ADD CONSTRAINT `event_category_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`);
 
 --
--- Constraints for table `organizer`
---
-ALTER TABLE `organizer`
-  ADD CONSTRAINT `organizer_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`);
-
---
--- Constraints for table `photographer`
---
-ALTER TABLE `photographer`
-  ADD CONSTRAINT `photographer_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`);
-
---
 -- Constraints for table `service_charge`
 --
 ALTER TABLE `service_charge`
   ADD CONSTRAINT `service_charge_ibfk_1` FOREIGN KEY (`org_id`) REFERENCES `organizer` (`org_id`);
-
---
--- Constraints for table `technician`
---
-ALTER TABLE `technician`
-  ADD CONSTRAINT `technician_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `event` (`event_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
