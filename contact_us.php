@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 if (isset($_POST["submit"])) {
   $username = $_POST["name"];
   $email = $_POST["email"];
@@ -38,9 +41,6 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
