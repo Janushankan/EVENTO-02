@@ -148,7 +148,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal1Label">Catering - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal1Label">Catering - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
@@ -219,7 +219,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal2Label">Photography - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal2Label">Photography - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
@@ -290,7 +290,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal3Label">DJ - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal3Label">DJ - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
@@ -363,7 +363,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal4Label">Decoration - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal4Label">Decoration - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
@@ -435,7 +435,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal5Label">Decoration + Photography - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal5Label">Decoration + Photography - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
@@ -506,7 +506,7 @@ session_start();
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5 active" id="exampleModal6Label">Photography + DJ - Book</h1>
+                                                <h1 class="modal-title fs-5 active1" id="exampleModal6Label">Photography + DJ - Book</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="container">
