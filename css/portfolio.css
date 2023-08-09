@@ -419,3 +419,12 @@ body {
 	background-color: #b60076;
 	color: #f1f1f1;
 }
+
+.heading {
+	font-family: "Cormorant Garamond", serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #3e3930;
+	font-size: 50px;
+	line-height: 1.1em;
+}

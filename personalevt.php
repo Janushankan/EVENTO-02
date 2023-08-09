@@ -82,24 +82,33 @@ session_start();
 
     <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
-            <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
+                    style="height: 65px; width: 150px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav gap-40">
-                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page" href="index.php">Home </a>
+                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page"
+                            href="index.php">Home </a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About Us</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="about_us.php">About Us</a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="services.php">Services</a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link active text-body-emphasis" href="portfolio.php">Portfolio</a></li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link active text-body-emphasis"
+                            href="portfolio.php">Portfolio</a></li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="packages.php">Packages</a>
                     </li>
 
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="contact_us.php">Contact
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="contact_us.php">Contact
                             Us</a>
                     </li>
 
@@ -109,18 +118,20 @@ session_start();
                 <div class="container-fluid">
                     <?php
                     if (isset($_SESSION["userid"])) {
-                    ?>
+                        ?>
                         <ul class="navbar-nav gap-40">
-                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Logout</a></li>
+                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn"
+                                    style="background-color: #e97dc3; " type="submit">Logout</a></li>
                         </ul>
 
-                    <?php
+                        <?php
                     } else {
-                    ?>
+                        ?>
                         <ul class="navbar-nav gap-40">
-                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Login</a></li>
+                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn"
+                                    style="background-color: #e97dc3; " type="submit">Login</a></li>
                         </ul>
-                    <?php
+                        <?php
                     }
                     ?>
                 </div>
@@ -129,9 +140,13 @@ session_start();
 
     </nav>
 
+    <div class="heading container text-center mt-5">
+        Personal Events
+    </div>
+
     <!-- Gallery -->
     <div class="container">
-        <div class="row my-5 py-5">
+        <div class="row my-5 py-3">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
                 <img src="images/portfolio 9.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
 

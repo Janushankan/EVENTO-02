@@ -12,7 +12,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+
 </head>
 
 <body>
@@ -33,11 +35,11 @@
             <!-- Top navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
-                    <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                    <button class="btn btn-primary  log-btn" id="sidebarToggle">Toggle Menu</button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <a class="dropdown-item" href="logout.php">Logout</a>
+                            <a class="dropdown-item logout" href="logout.php">Logout</a>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +76,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <input type="submit" value="Submit" class="btn btn-primary">
+                                <input type="submit" value="Submit" class="btn btn-primary  log-btn">
                                 <input type="reset" value="Reset" class="btn btn-secondary">
                             </td>
                         </tr>
