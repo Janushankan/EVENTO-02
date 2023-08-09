@@ -206,11 +206,15 @@ textarea.input {
   text-transform: none !important;
 }
 
-.title {
+h3.title1 {
   color: #df4adf;
 }
 
-.contact-info{
+.title1 {
+  color: #ffffff !important;
+}
+
+.contact-info {
   color: #333;
   margin: 1.5rem 0 2rem 0;
 }

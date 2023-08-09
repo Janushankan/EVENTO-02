@@ -10,11 +10,10 @@ if (isset($_POST["submit"])) {
 
   if (empty($username) || empty($email) || empty($phone) || empty($message)) {
     header("Location: contact_us.php?error");
-  }
-  else {
+  } else {
     $to = "vj.janushankan1006@gmail.com";
 
-    if(mail($to, $phone, $message, $mail)){
+    if (mail($to, $phone, $message, $mail)) {
       header("Location: contact_us.php?success");
     }
   }
@@ -54,9 +53,12 @@ if (isset($_POST["submit"])) {
   <!--head-->
   <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--body-->
   <link rel="stylesheet" href="css/contact_us.css" />
@@ -115,53 +117,62 @@ if (isset($_POST["submit"])) {
   </nav> -->
 
   <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
+    <div class="container-fluid">
+      <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
+          style="height: 65px; width: 150px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav gap-40">
+          <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page" href="index.php">Home </a>
+          </li>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About
+              Us</a>
+          </li>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+              href="services.php">Services</a>
+          </li>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+              href="portfolio.php">Portfolio</a></li>
+          <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+              href="packages.php">Packages</a>
+          </li>
+
+          <li class="nav-item text-body-emphasis"><a class="nav-link active text-body-emphasis"
+              href="contact_us.php">Contact
+              Us</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="navbar">
         <div class="container-fluid">
-            <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <?php
+          if (isset($_SESSION["userid"])) {
+            ?>
+            <ul class="navbar-nav gap-40">
+              <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn"
+                  style="background-color: #e97dc3; " type="submit">Logout</a></li>
+            </ul>
 
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav gap-40">
-                    <li class="nav-item"> <a class="nav-link text-body-emphasis" aria-current="page" href="index.php">Home </a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About Us</a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
-                    </li>
-
-                    <li class="nav-item text-body-emphasis"><a class="nav-link active text-body-emphasis" href="contact_us.php">Contact
-                            Us</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="navbar">
-                <div class="container-fluid">
-                    <?php
-                    if (isset($_SESSION["userid"])) {
-                    ?>
-                        <ul class="navbar-nav gap-40">
-                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Logout</a></li>
-                        </ul>
-
-                    <?php
-                    } else {
-                    ?>
-                        <ul class="navbar-nav gap-40">
-                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Login</a></li>
-                        </ul>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div>
+            <?php
+          } else {
+            ?>
+            <ul class="navbar-nav gap-40">
+              <li><a href="sign_in.php" id="loginButton" class="btn search-btn" style="background-color: #e97dc3; "
+                  type="submit">Login</a></li>
+            </ul>
+            <?php
+          }
+          ?>
         </div>
+      </div>
+    </div>
 
-    </nav>
+  </nav>
 
 
 
@@ -233,7 +244,7 @@ if (isset($_POST["submit"])) {
           <span class="circle two"></span>
 
           <form action="contact_us.php" method="POST" autocomplete="off">
-            <h3 class="title">Contact us</h3>
+            <h3 class="title1">Contact Us</h3>
             <?php
             $msg = "";
             if (isset($_GET['error'])) {
@@ -279,7 +290,8 @@ if (isset($_POST["submit"])) {
 
         <div class="col-lg-3 col-sm-6">
           <div class="single-box">
-            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo" style="height: 90px; width: 220px;"></a>
+            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo"
+                style="height: 90px; width: 220px;"></a>
 
             <h3 class="pt-4 foot">About Us</h3>
             <p class="foot">We are your trusted event planning partner, offering comprehensive services and
@@ -383,7 +395,9 @@ if (isset($_POST["submit"])) {
 
   <!--head and footer-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
   <script src="/contact_us.js"></script>
 
   <!--body-->
