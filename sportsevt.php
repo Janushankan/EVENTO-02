@@ -84,7 +84,7 @@ session_start();
 
     <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
-            <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
+            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
                     style="height: 65px; width: 150px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

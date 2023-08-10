@@ -1,44 +1,77 @@
 <?php
 session_start();
 ?>
+
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
+
 if (isset($_POST["submit"])) {
-  $username = $_POST["name"];
+  $name = $_POST["name"];
   $email = $_POST["email"];
   $phone = $_POST["phone"];
   $message = $_POST["message"];
 
-  if (empty($username) || empty($email) || empty($phone) || empty($message)) {
-    header("Location: contact_us.php?error");
-  } else {
-    $to = "vj.janushankan1006@gmail.com";
-
-    if (mail($to, $phone, $message, $mail)) {
-      header("Location: contact_us.php?success");
-    }
+  // Validate form fields
+  if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+    header('Location: contact_us.php?error=1');
+    exit;
   }
 
-  // $to = $email;
-  // $subject = $message;
+  $mail = new PHPMailer(true);
 
-  // $message = "phone: {$phone}" . $message;
+  try {
+    $mail->SMTPDebug = 0; // Enable verbose debug output
 
-  // // Always set content-type when sending HTML email
-  // $headers = "MIME-Version: 1.0" . "\r\n";
-  // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-  // // More headers
-  // $headers .= 'From: vj.janushankan1006@gmail.com';
+    $mail->isSMTP(); // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = 'vj.janushankan1006@gmail.com'; // SMTP username
+    $mail->Password = 'upaxmlvazprrilbq'; // SMTP password
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465; // TCP port to connect to
 
-  // $mail = mail($to, $subject, $message, $headers);
 
-  // if ($mail) {
-  //   echo "<script>alert('Mail Send');</script>";
+    $mail->setFrom('vj.janushankan1006@gmail.com', 'Contact Us');
+    $mail->addAddress('vj.janushankan1006@gmail.com'); // Add a recipient
+    // $mail->addAddress('ellen@example.com'); // Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+
+    // $mail->addAttachment('/var/tmp/file.tar.gz'); // Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); // Optional name
+    $mail->isHTML(true); // Set email format to HTML
+
+
+    $mail->Subject = 'EVENTO | Contact Us';
+    $mail->Body = '<b>Username:<b> ' . $name . '<br><b>Email:<b> ' . $email . '<br><b>Phone No:<b> ' . $phone . '<br><b>Message:<b> ' . $message;
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    header("Location: contact_us.php?success=1");
+    exit;
+  } catch (Exception $e) {
+    header('Location: contact_us.php?error=1');
+    exit;
+  }
+
+  // if (!$mail->Send()) {
+  //   echo '<script>alert("Message was not sent. Mailer error: ' . $mail->ErrorInfo . '");</script>';
   // } else {
-  //   echo "<script>alert('Mail Not Send');</script>";
+  //   echo '<script>alert("Message has been sent.");</script>';
   // }
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +151,7 @@ if (isset($_POST["submit"])) {
 
   <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
     <div class="container-fluid">
-      <a href="index.html"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
+      <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
           style="height: 65px; width: 150px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -239,6 +272,8 @@ if (isset($_POST["submit"])) {
           </div>
         </div>
 
+
+
         <div class="contact-form">
           <span class="circle one"></span>
           <span class="circle two"></span>
@@ -248,32 +283,32 @@ if (isset($_POST["submit"])) {
             <?php
             $msg = "";
             if (isset($_GET['error'])) {
-              $msg = "Please fill in the blanks";
+              $msg = "Please fill in the blanks.";
               echo '<div class="alert alert-danger">' . $msg . '</div>';
             }
             if (isset($_GET['success'])) {
-              $msg = "You message has been sent successfully";
+              $msg = "You message has been sent successfully.";
               echo '<div class="alert alert-success">' . $msg . '</div>';
             }
             ?>
             <div class="input-container">
               <input type="text" name="name" class="input" />
-              <label for="">Username</label>
+              <label for="name">Username</label>
               <span>Username</span>
             </div>
             <div class="input-container">
               <input type="email" name="email" class="input" />
-              <label for="">Email</label>
+              <label for="email">Email</label>
               <span>Email</span>
             </div>
             <div class="input-container">
               <input type="tel" name="phone" class="input" />
-              <label for="">Phone</label>
+              <label for="phone">Phone</label>
               <span>Phone</span>
             </div>
             <div class="input-container textarea">
               <textarea name="message" class="input"></textarea>
-              <label for="">Message</label>
+              <label for="message">Message</label>
               <span>Message</span>
             </div>
             <input type="submit" name="submit" value="Send" class="c-btn" />
