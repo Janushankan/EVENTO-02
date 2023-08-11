@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2023 at 07:07 PM
+-- Generation Time: Aug 11, 2023 at 04:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -38,6 +38,29 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `book`
+--
+
+CREATE TABLE `book` (
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_no` int(20) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`name`, `email`, `phone_no`, `type`, `location`, `date`) VALUES
+('Janushankan', 'janushankan1006@gmail.com', 711439088, 'Wedding', 'Trincomalee', '2023-08-18'),
+('Janushankan', 'janushankan1006@gmail.com', 711439088, 'Birthday', 'Jaffna', '2023-08-26');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `caterer`
 --
 
@@ -64,10 +87,17 @@ INSERT INTO `caterer` (`caterer_id`, `caterer_name`, `caterer_email`, `caterer_p
 
 CREATE TABLE `client` (
   `client_id` varchar(100) NOT NULL,
-  `client_name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`client_id`, `username`, `email`, `password`) VALUES
+('', 'Janushankan', 'janushankan1006@gmail.com', '$2y$10$NIXMKPnEuDbwoA6GPqrkgeLrx74EzVev0pq0HvKIHPha6gpmIBjmy');
 
 -- --------------------------------------------------------
 
@@ -89,7 +119,8 @@ CREATE TABLE `decorator` (
 --
 
 INSERT INTO `decorator` (`decorator_id`, `decorator_name`, `decorator_email`, `decorator_phone_no`, `description`, `image`) VALUES
-('D001', 'Kavindu', 'kavindu@gmail.com', 789654123, '', '');
+('D001', 'Kavindu', 'kavindu@gmail.com', 789654123, '', ''),
+('D002', 'Mahela', 'mahela@gmail.com', 712365896, '', 0x7465616d3030342e706e67);
 
 -- --------------------------------------------------------
 
@@ -189,6 +220,25 @@ CREATE TABLE `technician` (
   `event_id` varchar(100) NOT NULL,
   `image` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+('', 'admin', 'admin123');
 
 -- --------------------------------------------------------
 
