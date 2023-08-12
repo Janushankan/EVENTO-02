@@ -216,7 +216,7 @@ if (isset($_POST["submit"])) {
       <div class="form">
         <div class="contact-info">
           <h3 class="title">Let's get in touch</h3>
-          <p class="con-text">
+          <p class="text1 con-text">
             "Where every occasion becomes an unforgettable experience,
             let us weave the threads of your dreams into a tapestry of extraordinary events."
           </p>
