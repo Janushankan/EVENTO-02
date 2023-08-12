@@ -21,6 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userId = $signup->fetchUserId($uid); //for the updating data
         
         //Going back to front page
-        header("location:../signup.php?error=none");
+        header("location:../sign_in.php?error=none");
     }
 }

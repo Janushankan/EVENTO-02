@@ -216,7 +216,7 @@ if (isset($_POST["submit"])) {
       <div class="form">
         <div class="contact-info">
           <h3 class="title">Let's get in touch</h3>
-          <p class="text con-text">
+          <p class="con-text">
             "Where every occasion becomes an unforgettable experience,
             let us weave the threads of your dreams into a tapestry of extraordinary events."
           </p>
@@ -392,12 +392,12 @@ if (isset($_POST["submit"])) {
             </ul>
 
             <!-- <div class="input-group mb-3 mt-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username"
-                            aria-label="Enter your Email ..." aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2">
-                            <i class="fa fa-long-arrow-right"></i>
-                        </span>
-                    </div> -->
+                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                aria-label="Enter your Email ..." aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2">
+                                <i class="fa fa-long-arrow-right"></i>
+                            </span>
+                        </div> -->
 
             <div>
               <h2 class="text-dark">Follow us on</h2>

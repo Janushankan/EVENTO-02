@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 04:18 PM
+-- Generation Time: Aug 12, 2023 at 10:27 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
   `admin_name` varchar(100) NOT NULL,
   `admin_email` varchar(100) NOT NULL,
   `admin_phone_no` int(10) NOT NULL,
-  `client_id` varchar(100) NOT NULL
+  `client_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -86,7 +86,7 @@ INSERT INTO `caterer` (`caterer_id`, `caterer_name`, `caterer_email`, `caterer_p
 --
 
 CREATE TABLE `client` (
-  `client_id` varchar(100) NOT NULL,
+  `client_id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
@@ -97,7 +97,7 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `username`, `email`, `password`) VALUES
-('', 'Janushankan', 'janushankan1006@gmail.com', '$2y$10$NIXMKPnEuDbwoA6GPqrkgeLrx74EzVev0pq0HvKIHPha6gpmIBjmy');
+(1, 'Janushankan', 'janushankan1006@gmail.com', '$2y$10$5Rn5dE/aGNn.L2Gvmm7EjOSpR2dDW9hP5v5IdK6pCjUkmZBx2sIsK');
 
 -- --------------------------------------------------------
 
@@ -333,6 +333,12 @@ ALTER TABLE `venue`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `event_category`
