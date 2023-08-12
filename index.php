@@ -38,40 +38,6 @@ session_start();
 <body>
 
     <!--Navbar-->
-    <!-- <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
-        <div class="container-fluid">
-            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav gap-40">
-                    <li class="nav-item"> <a class="nav-link active text-body-emphasis" aria-current="page" href="index.php">Home </a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About Us</a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
-                    </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
-                    </li>
-
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="contact_us.php">Contact
-                            Us</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <nav class="navbar">
-            <div class="container-fluid">
-                <form class="d-flex">
-                    <a href="sign_in.php" class="btn search-btn" style="background-color: #e97dc3;" type="submit">Login</a>
-                </form>
-            </div>
-        </nav>
-    </nav> -->
 
     <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
@@ -316,9 +282,7 @@ session_start();
 
 
         <div class="container mb-5 pb-5">
-            <!-- <div class="d-flex justify-content-center align-items-center flex-column pb-5">
-                <h3>Services</h3>
-            </div> -->
+            
             <div class="row">
                 <div class="col-12">
                     <div class="gallery-heading pb-5">
@@ -530,18 +494,6 @@ session_start();
                 <!-- Add more gallery items as needed -->
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
     </main>
 
 
@@ -619,14 +571,6 @@ session_start();
                             </li>
                         </ul>
 
-                        <!-- <div class="input-group mb-3 mt-3">
-                            <input type="text" class="form-control" placeholder="Recipient's username"
-                                aria-label="Enter your Email ..." aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2">
-                                <i class="fa fa-long-arrow-right"></i>
-                            </span>
-                        </div> -->
-
                         <div>
                             <h2 class="text-dark">Follow us on</h2>
                             <p class="socials text-dark">
@@ -661,12 +605,6 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-        crossorigin="anonymous"></script> -->
     <script src="/contact_us.js"></script>
 
 
