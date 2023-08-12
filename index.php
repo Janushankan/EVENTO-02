@@ -11,9 +11,12 @@ session_start();
     <title>EVENTO</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- animation effects -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -27,7 +30,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    
+
 
 
 </head>
@@ -72,24 +75,33 @@ session_start();
 
     <nav class="navbar px-5 navbar-expand-lg nav-bg pb-2">
         <div class="container-fluid">
-            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo" style="height: 65px; width: 150px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail rounded" alt="logo"
+                    style="height: 65px; width: 150px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav gap-40">
-                    <li class="nav-item"> <a class="nav-link active text-body-emphasis" aria-current="page" href="index.php">Home </a>
+                    <li class="nav-item"> <a class="nav-link active text-body-emphasis" aria-current="page"
+                            href="index.php">Home </a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="about_us.php">About Us</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="about_us.php">About Us</a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="services.php">Services</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="services.php">Services</a>
                     </li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="portfolio.php">Portfolio</a></li>
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="packages.php">Packages</a>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="portfolio.php">Portfolio</a></li>
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="packages.php">Packages</a>
                     </li>
 
-                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis" href="contact_us.php">Contact
+                    <li class="nav-item text-body-emphasis"><a class="nav-link text-body-emphasis"
+                            href="contact_us.php">Contact
                             Us</a>
                     </li>
 
@@ -99,18 +111,20 @@ session_start();
                 <div class="container-fluid">
                     <?php
                     if (isset($_SESSION["userid"])) {
-                    ?>
+                        ?>
                         <ul class="navbar-nav gap-40">
-                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Logout</a></li>
+                            <li><a href="includes/logout.inc.php" id="logoutButton" class="btn search-btn"
+                                    style="background-color: #e97dc3; " type="submit">Logout</a></li>
                         </ul>
 
-                    <?php
+                        <?php
                     } else {
-                    ?>
+                        ?>
                         <ul class="navbar-nav gap-40">
-                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn" style="background-color: #e97dc3; " type="submit">Login</a></li>
+                            <li><a href="sign_in.php" id="loginButton" class="btn search-btn"
+                                    style="background-color: #e97dc3; " type="submit">Login</a></li>
                         </ul>
-                    <?php
+                        <?php
                     }
                     ?>
                 </div>
@@ -143,11 +157,13 @@ session_start();
                     <img src="images/intex_005.png" class="d-block w-100 slider-img" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -158,7 +174,8 @@ session_start();
 
         <!-- description -->
         <div class="container mb-1 pb-5  pt-5 mt-5">
-            <h3 class="pb-2 fs-1 mb-5" style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;" data-fontsize="26" data-lineheight="48">EVENTO</h3>
+            <h3 class="pb-2 fs-1 mb-5" style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;"
+                data-fontsize="26" data-lineheight="48">EVENTO</h3>
             <p class="text-center">Welcome to our event planner website! We understand that planning an event can be a
                 complex and
                 time-consuming task. That's why we have created a platform that offers a comprehensive range of services
@@ -177,7 +194,9 @@ session_start();
             <div class="row">
                 <div class="col-12">
                     <div class="gallery-heading pb-5">
-                        <h3 class="pb-2 fs-1 mb-5" style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;" data-fontsize="26" data-lineheight="48">Event Categories</h3>
+                        <h3 class="pb-2 fs-1 mb-5"
+                            style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;"
+                            data-fontsize="26" data-lineheight="48">Event Categories</h3>
 
                     </div>
                 </div>
@@ -303,7 +322,9 @@ session_start();
             <div class="row">
                 <div class="col-12">
                     <div class="gallery-heading pb-5">
-                        <h3 class="pb-2 fs-1 mb-5" style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;" data-fontsize="26" data-lineheight="48">Services</h3>
+                        <h3 class="pb-2 fs-1 mb-5"
+                            style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;"
+                            data-fontsize="26" data-lineheight="48">Services</h3>
                     </div>
                 </div>
             </div>
@@ -378,7 +399,8 @@ session_start();
                             Organize
                         </div>
                         <div class="desc-title">
-                            Exquisite event planning and coordination services to create memorable, stress-free occasions. Elevate your events with our expert touch.
+                            Exquisite event planning and coordination services to create memorable, stress-free
+                            occasions. Elevate your events with our expert touch.
                         </div>
                     </div>
                 </div>
@@ -392,7 +414,8 @@ session_start();
                             Venue Selection
                         </div>
                         <div class="desc-title">
-                            Discover ideal venues tailored to your event. Our Venue Selection service ensures the perfect backdrop, catering to your unique vision.
+                            Discover ideal venues tailored to your event. Our Venue Selection service ensures the
+                            perfect backdrop, catering to your unique vision.
                         </div>
                     </div>
                 </div>
@@ -412,7 +435,9 @@ session_start();
             <div class="row">
                 <div class="col-12">
                     <div class="gallery-heading pb-5">
-                        <h3 class="pb-2 fs-1 mb-5" style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;" data-fontsize="26" data-lineheight="48">Gallery</h3>
+                        <h3 class="pb-2 fs-1 mb-5"
+                            style="text-align: center; font-family: 'Pacifico', cursive;letter-spacing: 6px;"
+                            data-fontsize="26" data-lineheight="48">Gallery</h3>
                     </div>
                     <div class="elementor-divider">
                         <span class="elementor-divider-separator">
@@ -528,7 +553,8 @@ session_start();
 
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-box">
-                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo" style="height: 90px; width: 220px;"></a>
+                        <a href="index.php"><img src="images/logo.png" class="img-fluid img-thumbnail" alt="logo"
+                                style="height: 90px; width: 220px;"></a>
 
                         <h3 class="pt-4 foot">About Us</h3>
                         <p class="foot">We are your trusted event planning partner, offering comprehensive services and
@@ -632,7 +658,9 @@ session_start();
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
