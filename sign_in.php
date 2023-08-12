@@ -28,27 +28,7 @@
             <input type="password" name="pwd" placeholder="Password" />
           </div>
           <input type="submit" name="submit" value="Login" class="btn solid" />
-          <!-- <p class="social-text">Or Sign in with social platforms</p> -->
-          <!-- <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-pinterest"></i>
-            </a>
-          </div> -->
+          
         </form>
         <form action="includes/signup.inc.php" method="POST" class="sign-up-form">
           <div class="logo-img">
@@ -72,27 +52,7 @@
             <input type="password" name="pwdrepeat" placeholder="Confirm Password" />
           </div>
           <input type="submit" name="submit" class="btn" value="Sign up" />
-          <!-- <p class="social-text">Or Sign up with social platforms</p> -->
-          <!-- <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-pinterest"></i>
-            </a>
-          </div> -->
+          
         </form>
       </div>
     </div>
