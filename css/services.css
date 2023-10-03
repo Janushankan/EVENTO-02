@@ -545,7 +545,7 @@ h2 {
 }
 
 .modal-content {
-	max-height: 300px !important;
+	max-height: 820px !important;
 	/* Adjust the max height as needed */
 	overflow-y: auto !important;
 }
